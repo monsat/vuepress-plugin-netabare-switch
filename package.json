@@ -1,0 +1,39 @@
+{
+  "name": "vuepress-plugin-netabare-switch",
+  "version": "0.0.1",
+  "description": "VuePress v2 Plugin - netabare switch （ネタバレ・スイッチ）",
+  "main": "src/node/index.ts",
+  "types": "lib/node/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "copy": "cpx -C \"src/client/components/*.vue\" lib/client/components",
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monsat/vuepress-plugin-netabare-switch.git"
+  },
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress"
+  ],
+  "author": "monsat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/monsat/vuepress-plugin-netabare-switch/issues"
+  },
+  "homepage": "https://github.com/monsat/vuepress-plugin-netabare-switch#readme",
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "@vuepress/client": "2.0.0-beta.32",
+    "@vuepress/core": "2.0.0-beta.32",
+    "vue": "^3.2.24",
+    "vue-router": "^4.0.12"
+  }
+}
