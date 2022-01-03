@@ -2,7 +2,7 @@
   "name": "vuepress-plugin-netabare-switch",
   "version": "0.0.1",
   "description": "VuePress v2 Plugin - netabare switch （ネタバレ・スイッチ）",
-  "main": "src/node/index.ts",
+  "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "directories": {
     "lib": "lib"
