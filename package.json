@@ -10,7 +10,7 @@
   "scripts": {
     "copy": "cpx -C \"src/client/components/*.vue\" lib/client/components",
     "build": "tsc",
-    "prepare": "npm run build"
+    "prepare": "npm run copy; npm run build"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
   "dependencies": {
     "@vuepress/client": "2.0.0-beta.32",
     "@vuepress/core": "2.0.0-beta.32",
+    "@vueuse/core": "^7.5.1",
     "vue": "^3.2.24",
     "vue-router": "^4.0.12"
   }
