@@ -31,8 +31,8 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.32",
-    "@vuepress/core": "2.0.0-beta.32",
+    "@vuepress/client": "^2.0.0-beta.32",
+    "@vuepress/core": "^2.0.0-beta.32",
     "@vueuse/core": "^7.5.1",
     "vue": "^3.2.24",
     "vue-router": "^4.0.12"
