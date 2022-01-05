@@ -14,6 +14,7 @@ const {
   switchWrapperClass,
   switchBgClass,
   buttonClass,
+  labelClass,
 } = withDefaults(defineProps<Props>(), {
   switchWrapperClass: 'relative inline-block w-14 mr-2 align-middle select-none transition duration-200 ease-in',
   switchBgClass: 'block overflow-hidden h-7 rounded-full cursor-pointer',
