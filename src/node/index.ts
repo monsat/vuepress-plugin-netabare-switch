@@ -6,14 +6,14 @@ export interface NetaBarePluginOptions {
   keyPrefix: string
 }
 
-export const netabareSwitchPlugin: Plugin<NetaBarePluginOptions> = ({
+const netabareSwitchPlugin: Plugin<NetaBarePluginOptions> = ({
   componentPrefix = 'NetaBare',
   keyPrefix = 'netabare'
 }) => {
   const name = 'vuepress-plugin-netabare-switch'
   const clientAppEnhanceFiles = path.resolve(
     __dirname,
-    `../client/clientAppEnhance.ts`
+    `../client/clientAppEnhance.mjs`
   )
   const define = {
     __NETABARE_COMPONENT_PREFIX__: componentPrefix,

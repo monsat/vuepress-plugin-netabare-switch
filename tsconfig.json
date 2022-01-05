@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
     "composite": true,
-    "target": "ES2018",
-    "lib": ["DOM", "ES2020"],
+    "target": "ESNext",
     "module": "commonjs",
     "rootDir": "./src",
     "moduleResolution": "node",
@@ -19,5 +18,5 @@
     "strictNullChecks": true,
     "skipLibCheck": true
   },
-  "include": ["./src"]
+  "include": ["./src/"]
 }
