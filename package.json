@@ -27,7 +27,6 @@
   },
   "homepage": "https://github.com/monsat/vuepress-plugin-netabare-switch#readme",
   "devDependencies": {
-    "typescript": "^4.5.4",
     "unbuild": "^0.6.7"
   },
   "dependencies": {
