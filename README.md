@@ -69,14 +69,21 @@ and writing like below:
 ## The culprit is <NetaBareSpan bare="Mr. Foo">◯◯</NetaBareSpan>
 
 <NetaBareDiv>
-  <template #default>
-    Message that do not contain spoilers is here.
-  </template>
-  <template #bare>
-    Message containing spoilers is here.
-  </template>
+
+Message that do not contain spoilers is here.
+It is recommended that the first line be a blank line for markdown parser.
 </NetaBareDiv>
 
+<NetaBareDiv bare>
+
+Message containing spoilers is here.
+</NetaBareDiv>
+
+<NetaBareDiv bare :isBare="false">
+
+Message that do not contain spoilers is here.
+`isBare` prop takes priority of `bare` attribute.
+</NetaBareDiv>
 ```
 
 ![NetaBare Switch](https://github.com/monsat/vuepress-plugin-netabare-switch/blob/main/doc/images/netabare-switch.gif?raw=true)
@@ -97,14 +104,14 @@ plugins: [
 ],
 ```
 
-## Component Slots and Props
+## Component Slots, Props ,and Attributes
 
 ### `<NetaBareSwitch>`: Toggle switch.
 
 `#default` slot is message to toggle NetaBare
 
 Default is in Japanese.
-#### `name?: string`
+#### `name?: string` prop
 
 using for `<input type=checkbox class="toggle-checkbox">` id and storage key
 
@@ -140,9 +147,16 @@ using for `<input type=checkbox class="toggle-checkbox">` id and storage key
 
 ### `<NetaBareDiv>`: Div of spoiler
 
-`#default` slot is paragraph excluding spoiler.
+`#default` slot is paragraph including/excluding spoiler.
 
-`#bare` slot is paragraph including spoiler.
+#### `isBare?: boolean` prop
+
+If true, messages in the default slot are including spoiler.
+If false, without spoiler even if `bare` attribute exists.
+
+#### `bare` attribute
+
+If exists, messages in the default slot are including spoiler.
 
 ### `<NetaBareSpan>`: Span of spoiler
 
