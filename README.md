@@ -30,7 +30,18 @@ export default defineUserConfig<DefaultThemeOptions, ViteBundlerOptions>({
   bundlerConfig: {
     viteOptions: {
       plugins: [
-        WindiCSS(),
+        WindiCSS(
+          scan: {
+            include: [
+              path.resolve(__dirname, './**/*.{vue,html,md}'),
+              path.resolve(__dirname, '../../node_modules/vuepress-plugin-netabare-switch/lib/**/*.{vue,html,md}'),
+            ],
+            exclude: [
+              'node_modules/**/*',
+              '.git/**/*',
+            ],
+          },
+        ),
       ],
     },
   },
