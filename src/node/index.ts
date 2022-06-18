@@ -1,20 +1,21 @@
-import type { Plugin } from '@vuepress/core'
+import type { PluginObject } from '@vuepress/core'
 import { path } from '@vuepress/utils'
 
 export interface NetaBarePluginOptions {
-  componentPrefix: string
-  keyPrefix: string
+  componentPrefix?: string
+  keyPrefix?: string
 }
 
-const netabareSwitchPlugin: Plugin<NetaBarePluginOptions> = ({
-  componentPrefix = 'NetaBare',
-  keyPrefix = 'netabare'
-}) => {
+export const netabareSwitchPlugin = (options?: NetaBarePluginOptions): PluginObject => {
   const name = 'vuepress-plugin-netabare-switch'
-  const clientAppEnhanceFiles = path.resolve(
+  const clientConfigFile = path.resolve(
     __dirname,
-    `../client/clientAppEnhance.mjs`
+    `../client/clientConfig.mjs`
   )
+  const {
+    componentPrefix = 'NetaBare',
+    keyPrefix = 'netabare',
+  }: NetaBarePluginOptions = options || {}
   const define = {
     __NETABARE_COMPONENT_PREFIX__: componentPrefix,
     __NETABARE_KEY_PREFIX__: keyPrefix,
@@ -22,7 +23,7 @@ const netabareSwitchPlugin: Plugin<NetaBarePluginOptions> = ({
 
   return {
     name,
-    clientAppEnhanceFiles,
+    clientConfigFile,
     define,
   }
 }
